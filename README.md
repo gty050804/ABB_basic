@@ -5,10 +5,10 @@ It keeps the same four theoretical tasks:
 
 | Task | MATLAB script | Output |
 |---|---|---|
-| Forward kinematics | `scripts/01_forward_kinematics.m` | `results/forward_kinematics.mat` |
-| Inverse kinematics | `scripts/02_inverse_kinematics.m` | `results/inverse_kinematics.mat` |
-| Inverse dynamics | `scripts/03_inverse_dynamics.m` | `results/inverse_dynamics.mat` |
-| Forward dynamics | `scripts/04_forward_dynamics.m` | `results/forward_dynamics.mat` |
+| Forward kinematics | `scripts/task01_forward_kinematics.m` | `results/forward_kinematics.mat` |
+| Inverse kinematics | `scripts/task02_inverse_kinematics.m` | `results/inverse_kinematics.mat` |
+| Inverse dynamics | `scripts/task03_inverse_dynamics.m` | `results/inverse_dynamics.mat` |
+| Forward dynamics | `scripts/task04_forward_dynamics.m` | `results/forward_dynamics.mat` |
 
 The MATLAB package is under `+irb1300_kin_dyn/`.  It implements:
 
@@ -37,12 +37,12 @@ run('scripts/run_all.m')
 Or run individual tasks:
 
 ```matlab
-run('scripts/01_forward_kinematics.m')
-run('scripts/02_inverse_kinematics.m')
-run('scripts/03_inverse_dynamics.m')
-run('scripts/04_forward_dynamics.m')
+run('scripts/task01_forward_kinematics.m')
+run('scripts/task02_inverse_kinematics.m')
+run('scripts/task03_inverse_dynamics.m')
+run('scripts/task04_forward_dynamics.m')
 run('scripts/plot_results.m')
-run('scripts/08_export_task3_task4_summaries.m')
+run('scripts/task08_export_task3_task4_summaries.m')
 ```
 
 ## Notes
