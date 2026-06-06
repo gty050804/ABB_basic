@@ -1,0 +1,5 @@
+results/*.mat
+results/figures/*.png
+results/summaries/*.md
+*.asv
+*.m~

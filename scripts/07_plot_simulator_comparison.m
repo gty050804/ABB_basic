@@ -1,0 +1,3 @@
+% Simulator comparison plotting is not available in the MATLAB port.
+error(['Simulator comparison figures require PyBullet results from the Python project. ', ...
+    'Run scripts/plot_results.m to plot MATLAB theoretical results.']);

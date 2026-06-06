@@ -1,0 +1,13 @@
+function result = inverse_dynamics(robot, q, qd, qdd, f_ext_ee)
+%INVERSE_DYNAMICS Return drive, constraint, and total joint torques.
+if nargin < 5 || isempty(f_ext_ee)
+    f_ext_ee = zeros(6, 1);
+end
+tau_total = irb1300_kin_dyn.inverse_dynamics_raw(robot, q, qd, qdd, ...
+    robot.gravity, irb1300_kin_dyn.spatial_wrench(f_ext_ee));
+tau_drive = irb1300_kin_dyn.inverse_dynamics_raw(robot, q, qd, qdd, ...
+    robot.gravity, zeros(6, 1));
+result = struct('tau_drive', tau_drive, ...
+    'tau_constraint', tau_total - tau_drive, ...
+    'tau_total', tau_total);
+end
