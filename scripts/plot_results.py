@@ -187,6 +187,7 @@ def plot_forward_kinematics(results_dir: Path, out_dir: Path) -> list[Path]:
     q_traj = d["q_traj"]
     xyz = d["xyz_traj"]
     rpy = d["rpy_traj"]
+    rpy_plot = np.unwrap(rpy, axis=0)
     names = _joint_labels(d["joint_names"])
     steps = np.arange(q_traj.shape[0])
     has_3d = _can_use_3d_axes()
@@ -214,7 +215,7 @@ def plot_forward_kinematics(results_dir: Path, out_dir: Path) -> list[Path]:
 
     ax3 = fig.add_subplot(2, 2, 3)
     for i, label in enumerate(["roll", "pitch", "yaw"]):
-        ax3.plot(steps, np.degrees(rpy[:, i]), label=label)
+        ax3.plot(steps, np.degrees(rpy_plot[:, i]), label=label)
     ax3.set_xlabel("Step")
     ax3.set_ylabel("Angle [deg]")
     ax3.set_title("End-effector orientation (RPY)")

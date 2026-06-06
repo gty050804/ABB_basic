@@ -98,10 +98,34 @@ python3 scripts/06_compare_pybullet.py --no-tables
 python3 scripts/plot_results.py
 ```
 
+绘制四项任务的理论计算结果与 PyBullet 仿真器结果对比图：
+
+```bash
+python3 scripts/07_plot_simulator_comparison.py
+```
+
+导出 Task 3 和 Task 4 的输入、输出及仿真器对比可读汇总文件：
+
+```bash
+python3 scripts/08_export_task3_task4_summaries.py
+```
+
 图片默认保存在：
 
 ```text
 results/figures/
+```
+
+对比图默认保存在：
+
+```text
+results/figures/simulator_comparison/
+```
+
+Task 3/4 汇总文件默认保存在：
+
+```text
+results/summaries/
 ```
 
 ## 理论计算方法

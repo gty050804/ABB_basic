@@ -24,8 +24,9 @@ def main() -> None:
     robot = IRB1300Robot()
     q = default_home_configuration(robot.n_joints)
     qd = np.array([0.1, -0.05, 0.08, 0.0, 0.06, -0.04])
-    tau_drive = np.array([5.0, 3.0, 2.0, 1.0, 0.5, 0.2])
     f_ext = np.array([0.0, 0.0, -8.0, 0.0, 0.0, 0.0])
+    qdd_target = np.array([0.5, -0.3, 0.4, 0.2, -0.2, 0.3])
+    tau_drive = robot.inverse_dynamics(q, qd, qdd_target, f_ext)["tau_total"]
 
     qdd = robot.forward_dynamics(q, qd, tau_drive, f_ext)
 
@@ -40,6 +41,7 @@ def main() -> None:
         q=q,
         qd=qd,
         qdd=qdd,
+        qdd_target=qdd_target,
         tau_drive=tau_drive,
         f_ext_ee=f_ext,
         tau_total_check=id_check["tau_total"],
