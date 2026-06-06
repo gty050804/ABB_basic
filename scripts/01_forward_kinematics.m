@@ -5,7 +5,6 @@ addpath(ROOT);
 steps = 50;
 output = fullfile(ROOT, 'results', 'forward_kinematics.mat');
 robot = irb1300_kin_dyn.create_robot();
-fprintf('POE vs URDF FK error: %.3e\n', irb1300_kin_dyn.verify_poe_against_urdf(robot));
 
 q_center = irb1300_kin_dyn.default_home_configuration(robot.n_joints);
 [q_traj, ~, ~] = irb1300_kin_dyn.joint_sinusoid_trajectory(steps, robot.n_joints, 0.05, ...

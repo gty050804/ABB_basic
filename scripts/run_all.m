@@ -2,8 +2,8 @@
 ROOT = fileparts(fileparts(mfilename('fullpath')));
 scripts_dir = fullfile(ROOT, 'scripts');
 script_names = {'01_forward_kinematics.m', '02_inverse_kinematics.m', ...
-    '03_inverse_dynamics.m', '04_forward_dynamics.m', '05_verify_dynamics.m', ...
-    'plot_results.m'};
+    '03_inverse_dynamics.m', '04_forward_dynamics.m', 'plot_results.m', ...
+    '08_export_task3_task4_summaries.m'};
 
 for i = 1:numel(script_names)
     fprintf('\n============================================================\n');
